@@ -25,5 +25,5 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   recipient's send failure instead of aborting the run.
 - 17 tests, 96% coverage.
 
-[Unreleased]: https://github.com/hisie/django-freeletter/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/hisie/django-freeletter/releases/tag/v0.1.0
+[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/hisie/django-freeletter/releases/tag/0.1.0
