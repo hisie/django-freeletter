@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>{{ issue.title }}</h1>
+    {% for block_html in blocks %}
+        {{ block_html|safe }}
+    {% endfor %}
+</body>
+</html>

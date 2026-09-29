@@ -1,0 +1,13 @@
+{% load i18n %}<!DOCTYPE html>
+<html>
+<body>
+    <h1>{{ issue.title }}</h1>
+
+    {% for block_html in blocks %}
+        {{ block_html|safe }}
+    {% endfor %}
+
+    <p><a href="{{ archive_url }}">{% blocktrans %}View this issue in your browser{% endblocktrans %}</a></p>
+    <p><small><a href="{{ unsubscribe_url }}">{% blocktrans %}Unsubscribe{% endblocktrans %}</a></small></p>
+</body>
+</html>

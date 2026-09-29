@@ -1,0 +1,13 @@
+{% load i18n %}<!DOCTYPE html>
+<html>
+<body>
+    <h1>{% trans "Newsletter archive" %}</h1>
+    <ul>
+        {% for issue in issues %}
+            <li><a href="{{ issue.get_absolute_url }}">{{ issue.title }}</a></li>
+        {% empty %}
+            <li>{% trans "No issues yet." %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

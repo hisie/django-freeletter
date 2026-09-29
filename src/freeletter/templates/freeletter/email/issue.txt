@@ -1,0 +1,6 @@
+{{ issue.title }}
+
+{{ archive_url }}
+
+--
+{% load i18n %}{% blocktrans %}Unsubscribe:{% endblocktrans %} {{ unsubscribe_url }}

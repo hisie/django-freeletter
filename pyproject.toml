@@ -1,0 +1,73 @@
+[project]
+name = "django-freeletter"
+version = "0.1.0"
+description = "A small Django newsletter engine: subscribers, double opt-in, composable issues, a web archive, and a send queue."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "BSD-3-Clause" }
+authors = [{ name = "Diego Cebrian", email = "diego@cebrian-it.fr" }]
+keywords = ["django", "newsletter", "mailing-list", "email"]
+classifiers = [
+    "Framework :: Django",
+    "Framework :: Django :: 5.2",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: BSD License",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Communications :: Email",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "django>=5.2,<5.3",
+    "pillow>=12.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/hisie/django-freeletter"
+Repository = "https://github.com/hisie/django-freeletter"
+Issues = "https://github.com/hisie/django-freeletter/issues"
+
+[dependency-groups]
+dev = [
+    "black",
+    "coverage",
+    "isort",
+    "mypy",
+    "pytest",
+    "pytest-django",
+    "django-stubs",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/freeletter"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+plugins = ["mypy_django_plugin.main"]
+mypy_path = "src"
+
+[tool.django-stubs]
+django_settings_module = "tests.settings"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+python_files = ["test_*.py"]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.coverage.run]
+source = ["src/freeletter"]

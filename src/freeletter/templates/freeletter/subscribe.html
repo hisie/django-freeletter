@@ -1,0 +1,11 @@
+{% load i18n %}<!DOCTYPE html>
+<html>
+<body>
+    <h1>{% trans "Subscribe to our newsletter" %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{% trans "Subscribe" %}</button>
+    </form>
+</body>
+</html>
