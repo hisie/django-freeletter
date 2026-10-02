@@ -5,6 +5,13 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-02
+
+Docs-only — this `CHANGELOG.md` itself didn't exist until after 0.1.0
+was published; bumping so PyPI's project page reflects it (PyPI freezes
+the README/description at publish time, so it would otherwise stay
+stale relative to what's in git).
+
 ## [0.1.0] - 2026-09-29
 
 ### Added
@@ -25,5 +32,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   recipient's send failure instead of aborting the run.
 - 17 tests, 96% coverage.
 
-[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.1.0...HEAD
+[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.1.1...HEAD
+[0.1.1]: https://github.com/hisie/django-freeletter/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/hisie/django-freeletter/releases/tag/0.1.0
