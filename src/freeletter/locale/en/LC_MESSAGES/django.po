@@ -10,6 +10,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Queue selected issues for sending"
+msgstr ""
+
 msgid "Free content"
 msgstr ""
 

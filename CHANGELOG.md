@@ -5,6 +5,12 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- The English source catalogue (`locale/en`, added in 0.2.0) lacked one
+  string, "Queue selected issues for sending". Empty `msgstr`s anyway, so no
+  behaviour change.
+
 ## [0.2.0] - 2026-10-07
 
 ### Added
