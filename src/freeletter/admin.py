@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 from freeletter.models import Issue, IssueBlock, Subscriber
 
@@ -31,7 +32,7 @@ class IssueAdmin(admin.ModelAdmin):
     inlines = [IssueBlockInline]
     actions = ["queue_for_sending"]
 
-    @admin.action(description="Queue selected issues for sending")
+    @admin.action(description=_("Queue selected issues for sending"))
     def queue_for_sending(self, request, queryset):
         for issue in queryset.filter(status=Issue.Status.DRAFT):
             issue.queue()

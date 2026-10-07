@@ -5,6 +5,20 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-10-07
+
+### Added
+
+- Spanish translation (`freeletter/locale/es`, `.po` and compiled `.mo`
+  both committed and shipped in the wheel): models, admin, subscribe /
+  confirm / unsubscribe pages, the confirmation email and the issue email.
+- The admin action "Queue selected issues for sending" is translatable.
+
+### Changed
+
+- The package's standalone HTML pages now set `<html lang>` from the active
+  language instead of leaving it unset.
+
 ## [0.1.1] - 2026-10-02
 
 Docs-only — this `CHANGELOG.md` itself didn't exist until after 0.1.0

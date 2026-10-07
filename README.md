@@ -106,6 +106,24 @@ FREELETTER_BATCH_SIZE = 50
 FREELETTER_BATCH_DELAY = 2  # seconds, after every FREELETTER_BATCH_SIZE sends
 ```
 
+## Translations
+
+The package ships a Spanish translation (`src/freeletter/locale/es/`). Both
+the `.po` source and the compiled `.mo` are committed, so the wheel includes
+the `.mo` and nothing needs compiling on install. After editing the `.po`,
+recompile before releasing:
+
+```bash
+msgfmt -o src/freeletter/locale/es/LC_MESSAGES/django.mo \
+    src/freeletter/locale/es/LC_MESSAGES/django.po
+```
+
+New strings are extracted with `django-admin makemessages -l es` run from
+`src/freeletter/`. A project can override any single string in its own
+`LOCALE_PATHS` without copying the whole catalogue. Emails are rendered in
+the active language (the project's `LANGUAGE_CODE` when sent from the
+`send_freeletter_issues` command); there is no per-subscriber language yet.
+
 ## Development
 
 ```
