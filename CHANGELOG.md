@@ -5,12 +5,6 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Added
-
-- `freeletter/locale/en`: the English source catalogue (empty `msgstr`s, `.po`
-  and `.mo`), the same reference template Django and Oscar ship. No
-  behaviour change: the `msgid` is the English text.
-
 ## [0.2.0] - 2026-10-07
 
 ### Added
@@ -19,6 +13,9 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   both committed and shipped in the wheel): models, admin, subscribe /
   confirm / unsubscribe pages, the confirmation email and the issue email.
 - The admin action "Queue selected issues for sending" is translatable.
+- `freeletter/locale/en`: the English source catalogue (empty `msgstr`s, `.po`
+  and `.mo`), the same reference template Django and Oscar ship. No
+  behaviour change: the `msgid` is the English text.
 
 ### Changed
 
@@ -52,6 +49,7 @@ stale relative to what's in git).
   recipient's send failure instead of aborting the run.
 - 17 tests, 96% coverage.
 
-[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.1.1...HEAD
+[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/hisie/django-freeletter/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/hisie/django-freeletter/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/hisie/django-freeletter/releases/tag/0.1.0
