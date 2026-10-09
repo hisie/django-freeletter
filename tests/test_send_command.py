@@ -62,3 +62,25 @@ def test_send_command_continues_past_a_single_recipient_failure(monkeypatch):
     assert issue.status == Issue.Status.SENT
     assert len(mail.outbox) == 1
     assert mail.outbox[0].to == [good.email]
+
+
+def test_issue_email_uses_absolute_urls_for_images_and_links(settings):
+    settings.FREELETTER_BASE_URL = "https://shop.example.com/"
+    issue = Issue.objects.create(title="Imgs", slug="imgs", status=Issue.Status.QUEUED)
+    IssueBlock.objects.create(
+        issue=issue,
+        block_type="html",
+        html=(
+            '<img src="/media/a.jpg"><a href=\'/p/1/\'>x</a>'
+            '<img src="https://cdn.example.com/b.jpg"><img src="//cdn.example.com/c.jpg">'
+        ),
+    )
+    Subscriber.objects.create(email="a@example.com", is_confirmed=True)
+
+    call_command("send_freeletter_issues")
+
+    html = mail.outbox[0].alternatives[0][0]
+    assert 'src="https://shop.example.com/media/a.jpg"' in html
+    assert "href='https://shop.example.com/p/1/'" in html
+    assert 'src="https://cdn.example.com/b.jpg"' in html
+    assert 'src="//cdn.example.com/c.jpg"' in html

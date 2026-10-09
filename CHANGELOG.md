@@ -5,8 +5,14 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-10-09
+
 ### Fixed
 
+- Issue emails now carry absolute `src`/`href` URLs in the block content
+  (images, product/post links). They were root-relative (`/media/...`), which
+  an email client cannot resolve. Built from the request, or from
+  `FREELETTER_BASE_URL` when sent from the management command.
 - The English source catalogue (`locale/en`, added in 0.2.0) lacked one
   string, "Queue selected issues for sending". Empty `msgstr`s anyway, so no
   behaviour change.
@@ -55,7 +61,8 @@ stale relative to what's in git).
   recipient's send failure instead of aborting the run.
 - 17 tests, 96% coverage.
 
-[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.2.0...HEAD
+[Unreleased]: https://github.com/hisie/django-freeletter/compare/0.2.1...HEAD
+[0.2.1]: https://github.com/hisie/django-freeletter/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/hisie/django-freeletter/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/hisie/django-freeletter/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/hisie/django-freeletter/releases/tag/0.1.0

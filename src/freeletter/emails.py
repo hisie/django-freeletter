@@ -7,7 +7,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 
 from freeletter.models import Issue, Subscriber
-from freeletter.urls_helpers import absolute_url
+from freeletter.urls_helpers import absolute_url, absolutize_html
 
 
 def _from_email() -> str:
@@ -41,7 +41,10 @@ def send_issue_email(
         "subscriber": subscriber,
         "unsubscribe_url": unsubscribe_url,
         "archive_url": archive_url,
-        "blocks": [block.render({"request": request}) for block in issue.blocks.all()],
+        "blocks": [
+            absolutize_html(block.render({"request": request}), request)
+            for block in issue.blocks.all()
+        ],
     }
 
     subject = issue.effective_subject()
